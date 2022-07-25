@@ -53,7 +53,7 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 2. Exploratory data analysis
 
-   The datasets is cleaned with necessary step. The duplicate is removed. The correlation between features are computed using Logistic Regression (continous vs continous) and Cramer's V (continous vs categorical). From the correlation results, the selected features are `age`, `thalachh`, `oldpeak`, `cp`, `exng`, `caa`, and `thall`. / `trtbps`,`chol`
+   The datasets is cleaned with necessary step. The duplicate is removed. The correlation between features are computed using Logistic Regression (continous vs continous) and Cramer's V (continous vs categorical). From the correlation results, the selected features are `age`, `trtbps`,`chol`,`thalachh`, `oldpeak`, `cp`, `exng`, `caa`, and `thall`.
 
    ## 3. Machine learning model 
 
@@ -67,8 +67,11 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 4. Model Prediction and Accuracy
 
-   The results with the best accuracy score is Logistic Regression (lr) with 84 % accuracy score. The classification report of the training is shown below. 
+   The results with the best accuracy score is Logistic Regression (lr) with 84 % accuracy score. 
+   - The classification report in a image.
+   - ![](Statics/84%_2.JPG)
    
+   The classification report in a table is shown below. 
    <!DOCTYPE html>
 <html>
  
@@ -124,8 +127,6 @@ This project contains two .py files. The training and deploy files are Heart_Att
  
 </html>    
 
-
-![](Statics/84%_2.JPG)
 
 
    ## 5. Deployment
