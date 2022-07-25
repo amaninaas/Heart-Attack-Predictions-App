@@ -7,10 +7,8 @@
 import os
 import pickle
 import numpy as np
-import pandas as pd
 import streamlit as st
 from PIL import Image
-
 # 'age', 'trtbps', 'chol', 'thalachh', 'oldpeak', 'cp', 'exng', 'caa', 'thall', 'output'
 #%% App Deployment 
 

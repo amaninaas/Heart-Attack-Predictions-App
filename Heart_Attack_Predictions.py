@@ -120,7 +120,7 @@ for i in cat_col:
 
 print(selected_features)
 # From cat_col, the features that have correlation more than 0.4 with y 
-# are cp,exng,caa,thall,output
+# are cp,exng,slp,caa,thall,output
 
 # to visualize the correlation using heatmap
 import seaborn as sns
@@ -128,8 +128,8 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr(), cmap='RdBu')
 
 #%% Step 5) Data Preprocessing
-# From Step 4, there are 9 selected features that are more than 0.4 correlation
-# which are age,trtbps,chol,thalachh,oldpeak,cp,exng,caa,thall.
+# From Step 4, there are 10 selected features that are more than 0.4 correlation
+# which are age,trtbps,chol,thalachh,oldpeak,cp,exng,slp,caa,thall.
 
 df = df.loc[:,selected_features]
 X = df.drop(labels='output',axis=1)
@@ -241,17 +241,17 @@ print(grid.best_score_)
 # The best score for grid is equal to 0.8529346622369879
 print(grid.best_params_)
 # The best params are {'Logistic_Classifier__C': 5.0, 
-#                     'Logistic_Classifier__intercept_scaling': 2, 
+#                     'Logistic_Classifier__intercept_scaling': 1, 
 #                     'Logistic_Classifier__random_state': None, 
 #                     'Logistic_Classifier__solver': 'saga', 
-#                     'Logistic_Classifier__tol': 3}
+#                     'Logistic_Classifier__tol': 5}
 print(grid.best_estimator_)
 # The best estimator is 
 # Pipeline(steps=[('Standard_Scaler', StandardScaler()),
 #                 ('Logistic_Classifier',
 #                  LogisticRegression(C=5.0,
 #                                     solver='saga',
-#                                     tol=3))])
+#                                     tol=5))])
 
 # To check the accuracy of the model
 y_pred = grid.predict(X_test)
