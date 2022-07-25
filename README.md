@@ -68,8 +68,63 @@ This project contains two .py files. The training and deploy files are Heart_Att
    ## 4. Model Prediction and Accuracy
 
    The results with the best accuracy score is Logistic Regression (lr) with 81 % accuracy score. The classification report of the training is shown below. 
+   
+   <!DOCTYPE html>
+<html>
+ 
+<head>
+</head>
+ 
+<body>
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>precision</th>
+            <th>recall</th>
+            <th>f1-score</th>
+            <th>support</th>
+        </tr>
+        <tr>
+            <td>0.0</td>
+            <td>0.81</td>          
+            <td>0.80</td>
+            <td>0.80</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>1.0</td>
+            <td>0.81</td>          
+            <td>0.83</td>
+            <td>0.82</td>
+            <td>47</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td></td>          
+            <td></td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>macro avg</td>
+            <td>0.81</td>          
+            <td>0.81</td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>weighted avg</td>
+            <td>0.81</td>          
+            <td>0.81</td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+    </table>
+</body>
+ 
+</html>    
 
-   ![](Statics/Classification_report_accuracy.JPG)
+![](Statics/Classification_report_accuracy.JPG)
 
    ## 5. Deployment
 
