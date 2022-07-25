@@ -103,28 +103,33 @@ for i in con_col:
     lr.fit(np.expand_dims(df[i], axis=-1),y)
     print(i)
     print(lr.score(np.expand_dims(df[i],axis=-1),y))
-    if lr.score(np.expand_dims(df[i],axis=-1),y) >= 0.6:
+    if lr.score(np.expand_dims(df[i],axis=-1),y) >= 0.5:
         selected_features.append(i)
 
 print(selected_features)
-# From con_col, the features that are more than 0.6 are age,thalachh,oldpeak.
+# From con_col, the features that are more than 0.5 are age,trtbps,
+# chol,thalachh,oldpeak.
 
 # To check correlation between categorical vs categorical data
 for i in cat_col:
     print(i)
-    cmx = pd.crosstab(df[i],df['output']).to_numpy()
+    cmx = pd.crosstab(df[i],y).to_numpy()
     print(cramers_corrected_stat(cmx))
-    if cramers_corrected_stat(cmx) > 0.4:
+    if cramers_corrected_stat(cmx) >= 0.4:
         selected_features.append(i)
 
 print(selected_features)
-# From cat_col, there are no feature have more than 0.6 correlations.
-# But, cp and thall have more that more 0.5 correlations
+# From cat_col, the features that have correlation more than 0.4 with y 
+# are cp,exng,caa,thall,output
+
+# to visualize the correlation using heatmap
+import seaborn as sns
+plt.figure(figsize=(10, 8))
+sns.heatmap(df.corr(), cmap='RdBu')
 
 #%% Step 5) Data Preprocessing
-# From Step 4, there are 7 selected features which are
-# age,thalachh,oldpeak,cp,exng,caa,thall that has more than 0.4 
-# correlation between y.
+# From Step 4, there are 9 selected features that are more than 0.4 correlation
+# which are age,trtbps,chol,thalachh,oldpeak,cp,exng,caa,thall.
 
 df = df.loc[:,selected_features]
 X = df.drop(labels='output',axis=1)
@@ -210,7 +215,7 @@ print('The best scaler and classifier for HAP app is {},with accuracy of {}'.
 
 # From Model Development steps,the best scaler and classifier for HAP app is 
 # [('Standard_Scaler', StandardScaler()), ('Logistic_Classifier', LogisticRegression())]
-# with accuracy of 0.8241758241758241
+# with accuracy of 0.8461538461538461
 
 #%% GridSearchCV
 # To check the best parameter of the best model.
@@ -233,20 +238,20 @@ grid = grid_search.fit(X_train, y_train)
 
 
 print(grid.best_score_)
-# The best score for grid is equal to 0.8625692137320045
+# The best score for grid is equal to 0.8529346622369879
 print(grid.best_params_)
-# The best params are {'Logistic_Classifier__C': 3.0, 
-#                     'Logistic_Classifier__intercept_scaling': 1, 
+# The best params are {'Logistic_Classifier__C': 5.0, 
+#                     'Logistic_Classifier__intercept_scaling': 2, 
 #                     'Logistic_Classifier__random_state': None, 
-#                     'Logistic_Classifier__solver': 'sag', 
-#                     'Logistic_Classifier__tol': 1}
+#                     'Logistic_Classifier__solver': 'saga', 
+#                     'Logistic_Classifier__tol': 3}
 print(grid.best_estimator_)
 # The best estimator is 
 # Pipeline(steps=[('Standard_Scaler', StandardScaler()),
 #                 ('Logistic_Classifier',
-#                  LogisticRegression(C=3.0,
-#                                     solver='sag',
-#                                     tol=1))])
+#                  LogisticRegression(C=5.0,
+#                                     solver='saga',
+#                                     tol=3))])
 
 # To check the accuracy of the model
 y_pred = grid.predict(X_test)

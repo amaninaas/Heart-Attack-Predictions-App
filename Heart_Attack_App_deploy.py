@@ -4,16 +4,30 @@
 
 # From the model, there are 7 selected features include 
 # age,thalachh,oldpeak,cp,exng,caa, and thall
-#%% App Deployment
 import os
 import pickle
 import numpy as np
+import pandas as pd
 import streamlit as st
 from PIL import Image
+
+# 'age', 'trtbps', 'chol', 'thalachh', 'oldpeak', 'cp', 'exng', 'caa', 'thall', 'output'
+#%% App Deployment 
 
 MODEL_PATH = os.path.join(os.getcwd(),'Models','HAP_App_model.pkl')
 with open(MODEL_PATH,'rb') as file:
     classifier = pickle.load(file)
+
+# df = pd.read_csv(os.path.join(os.getcwd(),'Dataset','test_data.csv'),
+#                   delim_whitespace=(True))
+# df = pd.read_csv(os.path.join(os.getcwd(),'Dataset','test.csv'))
+# print(classifier.predict(df))
+
+# The result from the model [1. 0. 1. 1. 1. 0. 1. 1. 0. 0.]
+
+
+#%% App Development
+
 
 st.markdown("<h1 style='text-align: center; color: black;'> Heart Attack App </h1>",
             unsafe_allow_html=True)
@@ -25,13 +39,15 @@ st.video('https://youtu.be/bw_Vv2WRG-A')
 # SideBar Page
 st.sidebar.header("Please fill in the details below")
 
-age =       st.sidebar.number_input("Age in Years", 1, 90, 25, 1)
+age =       st.sidebar.number_input("Age in Years", 1, 90, 65, 1)
+trtbps =       st.sidebar.number_input("Resting blood pressure value of patient in mmHg (unit)", 1, 200, 179, 1)
+chol =        st.sidebar.number_input("Cholesterol of patient in mg/dl (unit)", 1, 450, 273, 1)
+cp = st.sidebar.number_input("Chest Pain type",0,3,1,1)
 thalachh = st.sidebar.number_input("Maximum Heart Rate Achieved",0,200,150,1)
+exng = st.sidebar.number_input("Exercise Induced Angina",0,1,1,1)
 oldpeak = st.sidebar.number_input("ST depression induced by exercise" 
                                   "relative to rest",
                                   0.00, 3.50, 2.3, 0.10)
-cp = st.sidebar.number_input("Chest Pain type",0,3,1,1)
-exng = st.sidebar.number_input("Exercise Induced Angina",0,1,1,1)
 caa = st.sidebar.number_input("Number of major vessels (0-3)",0,3,1,1)
 thall = st.sidebar.number_input("Thalassemia",0,3,1,1)
 
