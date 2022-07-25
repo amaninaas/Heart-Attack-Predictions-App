@@ -69,7 +69,8 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    The results with the best accuracy score is Logistic Regression (lr), Standard Scaler (ss) with 84 % accuracy score. 
    - The classification report in a image.
-   - ![](Statics/84.JPG)
+   
+   ![](Statics/84.JPG)
      
    - The classification report in a table is shown below. 
    <!DOCTYPE html>
