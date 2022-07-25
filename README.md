@@ -124,7 +124,9 @@ This project contains two .py files. The training and deploy files are Heart_Att
  
 </html>    
 
+
 ![](Statics/84%_2.JPG)
+
 
    ## 5. Deployment
 
