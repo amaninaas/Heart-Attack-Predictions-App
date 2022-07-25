@@ -22,6 +22,7 @@ with open(MODEL_PATH,'rb') as file:
 # print(classifier.predict(df))
 
 # The result from the model [1. 0. 1. 1. 1. 0. 1. 1. 0. 0.]
+# The result are the same as the True output except for the test data no 8.
 
 
 #%% App Development
