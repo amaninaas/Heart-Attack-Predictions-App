@@ -47,42 +47,90 @@ This project is created using Spyder as the main IDE. The main frameworks used i
 # Methodology
 This project contains two .py files. The training and deploy files are Heart_Attack_Predictions.py and Heart_Attack_App_deploy.py respectively. The flow of the projects are as follows:
 
-## 1. Importing the libraries and dataset
+   ## 1. Importing the libraries and dataset
 
-The data are loaded from the dataset and usefull libraries are imported.
+   The data are loaded from the dataset and usefull libraries are imported.
 
-## 2. Exploratory data analysis
+   ## 2. Exploratory data analysis
 
-The datasets is cleaned with necessary step. The duplicate is removed. The correlation between features are computed. 
+   The datasets is cleaned with necessary step. The duplicate is removed. The correlation between features are computed using Logistic Regression (continous vs continous) and Cramer's V (continous vs categorical). From the correlation results, the selected features are `age`, `thalachh`, `oldpeak`, `cp`, `exng`, `caa`, and `thall`. / `trtbps`,`chol`
 
-![This is an image]()
+   ## 3. Machine learning model 
 
-It is shown that chest pain (cp), maximum heart rate achieved (thalach) and slope (slp) have highest corrolation with target. 
-The data are scaled with MinMax Scaler to refine the outliers. Next, the data is splitted into 70:30 train and test ratio. 
+   Few machine learning model suits for binary classfification problem are selected and built into the pipeline such as 
 
-## 3. Machine learning model 
+  1. Logistic regression (lr)
+  2. K Neighbors Classifier (knn)
+  3. Random Forest Classifier (rf)
+  4. Support Vector Classifier (svc)
+  5. Decision Tree Classifier (dt)
 
-Few machine learning model suits for binary classfification problem are selected and built into the pipeline such as 
+   ## 4. Model Prediction and Accuracy
 
-1. Logistic regression
-2. K Neighbors Classifier
-3. Random Forest Classifier
-4. Support Vector Classifier
-5. Decision Tree Classifier
+   The results with the best accuracy score is Logistic Regression (lr) with 81 % accuracy score. The classification report of the training is shown below. 
+   
+   <!DOCTYPE html>
+<html>
+ 
+<head>
+</head>
+ 
+<body>
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>precision</th>
+            <th>recall</th>
+            <th>f1-score</th>
+            <th>support</th>
+        </tr>
+        <tr>
+            <td>0.0</td>
+            <td>0.81</td>          
+            <td>0.80</td>
+            <td>0.80</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>1.0</td>
+            <td>0.81</td>          
+            <td>0.83</td>
+            <td>0.82</td>
+            <td>47</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td></td>          
+            <td></td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>macro avg</td>
+            <td>0.81</td>          
+            <td>0.81</td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>weighted avg</td>
+            <td>0.81</td>          
+            <td>0.81</td>
+            <td>0.81</td>
+            <td>91</td>
+        </tr>
+    </table>
+</body>
+ 
+</html>    
 
-## 4. Model Prediction and Accuracy
+![](Statics/Classification_report_accuracy.JPG)
 
-The results with the best accuracy score is K Neighbors Classifier with 84 % accuracy score. The classification report of the training is shown below. 
+   ## 5. Deployment
 
-![](https://github.com/ainnmzln/heart_attack_prediction_using_ML/blob/main/images/acuracy%20score.png)
+  The data is then tested with few cases.
 
-![](https://github.com/ainnmzln/heart_attack_prediction_using_ML/blob/main/images/report.png)
+   ## 6. Build the app using Streamlit
 
-## 5. Deployment
-
-The data is then tested with few cases.
-
-## 6. Build the app using Streamlit
-
-An app to predict the chance of a person to get heart attack is then build using Streamlit. 
-![](https://github.com/ainnmzln/heart_attack_prediction_using_ML/blob/main/images/apps.png)
+   An app to predict the chance of a person to get heart attack is then build using Streamlit. 
+   ![](Statics/streamlit_deploy.JPG)
