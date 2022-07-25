@@ -95,6 +95,8 @@ df = df.drop_duplicates()
 y = df['output']
 selected_features = []
 
+# print(df.corr)
+
 # To check correlation between continous data vs categorical data
 for i in con_col:
     lr = LogisticRegression()
@@ -112,7 +114,7 @@ for i in cat_col:
     print(i)
     cmx = pd.crosstab(df[i],df['output']).to_numpy()
     print(cramers_corrected_stat(cmx))
-    if cramers_corrected_stat(cmx) >0.4:
+    if cramers_corrected_stat(cmx) > 0.4:
         selected_features.append(i)
 
 print(selected_features)
@@ -121,7 +123,7 @@ print(selected_features)
 
 #%% Step 5) Data Preprocessing
 # From Step 4, there are 7 selected features which are
-# age,thalachh,oldpeak,cp,exng,caa,thall that has more than 0.5 
+# age,thalachh,oldpeak,cp,exng,caa,thall that has more than 0.4 
 # correlation between y.
 
 df = df.loc[:,selected_features]
