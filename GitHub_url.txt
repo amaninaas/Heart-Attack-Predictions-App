@@ -1,2 +1,2 @@
 
-https://github.com/amaninaas/Heart-Attack-Predictions-App.git
+https://github.com/amaninaas/Streamlit-App-For-Heart-Attack-Prediction.git
