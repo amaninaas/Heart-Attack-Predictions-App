@@ -19,6 +19,7 @@
   ├── Models                                      : Contains model used in Heart_Attack_App Deploy
   ├── Statics                                     : Contains all save image (graphs/heatmap)
   ├── __pycache__                                 : Contains .pyc file
+  ├── GitHub_url.txt                              : Github url in .txt
   ├── Heart_Attack_App_deploy.py                  : App deploy in python format
   ├── Heart_Attack_Predictions.py                 : Code file in python format
   └──  README.md                                  : Project Descriptions 
@@ -57,7 +58,7 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 3. Machine learning model 
 
-   Few machine learning model suits for binary classfification problem are selected and built into the pipeline such as 
+   Few machine learning model suits for binary classfification problem are selected and built into the pipeline using both Min Max Scaler and Standard Scaler such as 
 
   1. Logistic regression (lr)
   2. K Neighbors Classifier (knn)
@@ -67,11 +68,12 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 4. Model Prediction and Accuracy
 
-   The results with the best accuracy score is Logistic Regression (lr) with 84 % accuracy score. 
+   The results with the best accuracy score is Logistic Regression (lr), Standard Scaler (ss) with 84 % accuracy score. 
    - The classification report in a image.
-   - ![](Statics/84%_2.JPG)
    
-   The classification report in a table is shown below. 
+   ![](Statics/84.JPG)
+     
+   - The classification report in a table is shown below. 
    <!DOCTYPE html>
 <html>
  
@@ -137,3 +139,6 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    An app to predict the chance of a person to get heart attack is then build using Streamlit. 
    ![](Statics/streamlit-Heart_Attack_App_deploy-2022-07-25-18-07-97.gif)
+
+# Credit
+This dataset are from [Heart_Attack_Analysis & Predictions](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
