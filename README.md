@@ -139,3 +139,6 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    An app to predict the chance of a person to get heart attack is then build using Streamlit. 
    ![](Statics/streamlit-Heart_Attack_App_deploy-2022-07-25-18-07-97.gif)
+
+# Credit
+This dataset are from ![Heart_Attack_Analysis  Predicctions](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
