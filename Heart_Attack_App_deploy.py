@@ -57,8 +57,8 @@ st.markdown(
             "<h1 style='text-align: center; color: black;'>Your Result</h1>",
             unsafe_allow_html=True)
 if submitted:
-    new_data = np.expand_dims([age,thalachh,oldpeak,cp,exng,caa,thall],
-                                  axis=0)
+    new_data = np.expand_dims([age,trtbps,chol,thalachh,oldpeak,cp,
+                               exng,caa,thall],axis=0)
     outcome = classifier.predict(new_data)[0]
     if outcome == 0:
             st.markdown(
