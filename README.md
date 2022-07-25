@@ -57,7 +57,7 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 3. Machine learning model 
 
-   Few machine learning model suits for binary classfification problem are selected and built into the pipeline such as 
+   Few machine learning model suits for binary classfification problem are selected and built into the pipeline using both Min Max Scaler and Standard Scaler such as 
 
   1. Logistic regression (lr)
   2. K Neighbors Classifier (knn)
@@ -67,11 +67,11 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 4. Model Prediction and Accuracy
 
-   The results with the best accuracy score is Logistic Regression (lr) with 84 % accuracy score. 
+   The results with the best accuracy score is Logistic Regression (lr), Standard Scaler (ss) with 84 % accuracy score. 
    - The classification report in a image.
-   - ![](Statics/84%_2.JPG)
-   
-   The classification report in a table is shown below. 
+   - ![](Statics/84.JPG)
+     
+   - The classification report in a table is shown below. 
    <!DOCTYPE html>
 <html>
  
