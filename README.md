@@ -19,6 +19,7 @@
   ├── Models                                      : Contains model used in Heart_Attack_App Deploy
   ├── Statics                                     : Contains all save image (graphs/heatmap)
   ├── __pycache__                                 : Contains .pyc file
+  ├── GitHub_url.txt                              : Github url in .txt
   ├── Heart_Attack_App_deploy.py                  : App deploy in python format
   ├── Heart_Attack_Predictions.py                 : Code file in python format
   └──  README.md                                  : Project Descriptions 
