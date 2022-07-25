@@ -141,4 +141,4 @@ This project contains two .py files. The training and deploy files are Heart_Att
    ![](Statics/streamlit-Heart_Attack_App_deploy-2022-07-25-18-07-97.gif)
 
 # Credit
-This dataset are from [Heart_Attack_Analysis  Predicctions](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
+This dataset are from [Heart_Attack_Analysis & Predictions](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
