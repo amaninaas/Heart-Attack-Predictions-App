@@ -67,7 +67,7 @@ This project contains two .py files. The training and deploy files are Heart_Att
 
    ## 4. Model Prediction and Accuracy
 
-   The results with the best accuracy score is Logistic Regression (lr) with 81 % accuracy score. The classification report of the training is shown below. 
+   The results with the best accuracy score is Logistic Regression (lr) with 84 % accuracy score. The classification report of the training is shown below. 
    
    <!DOCTYPE html>
 <html>
@@ -86,37 +86,37 @@ This project contains two .py files. The training and deploy files are Heart_Att
         </tr>
         <tr>
             <td>0.0</td>
-            <td>0.81</td>          
-            <td>0.80</td>
-            <td>0.80</td>
+            <td>0.89</td>          
+            <td>0.750</td>
+            <td>0.81</td>
             <td>44</td>
         </tr>
         <tr>
             <td>1.0</td>
-            <td>0.81</td>          
-            <td>0.83</td>
-            <td>0.82</td>
+            <td>0.80</td>          
+            <td>0.91</td>
+            <td>0.85</td>
             <td>47</td>
         </tr>
         <tr>
             <td>accuracy</td>
             <td></td>          
             <td></td>
-            <td>0.81</td>
+            <td>0.84</td>
             <td>91</td>
         </tr>
         <tr>
             <td>macro avg</td>
-            <td>0.81</td>          
-            <td>0.81</td>
-            <td>0.81</td>
+            <td>0.84</td>          
+            <td>0.83</td>
+            <td>0.83</td>
             <td>91</td>
         </tr>
         <tr>
             <td>weighted avg</td>
-            <td>0.81</td>          
-            <td>0.81</td>
-            <td>0.81</td>
+            <td>0.84</td>          
+            <td>0.84</td>
+            <td>0.83</td>
             <td>91</td>
         </tr>
     </table>
@@ -124,13 +124,13 @@ This project contains two .py files. The training and deploy files are Heart_Att
  
 </html>    
 
-![](Statics/Classification_report_accuracy.JPG)
+![](Statics/84%_2.JPG)
 
    ## 5. Deployment
 
-  The data is then tested with few cases.
+  The data is then tested with few cases. 
 
    ## 6. Build the app using Streamlit
 
    An app to predict the chance of a person to get heart attack is then build using Streamlit. 
-   ![](Statics/streamlit_deploy.JPG)
+   ![](Statics/streamlit-Heart_Attack_App_deploy-2022-07-25-18-07-97.gif)
